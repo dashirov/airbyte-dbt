@@ -29,6 +29,6 @@ SELECT
        _airbyte_raw_entries._airbyte_data->'fields' as fields,
        _airbyte_raw_entries._airbyte_data->'metadata' as metadata
 {% endif %}
-    from _airbyte_raw_{{ this }}
+    from _airbyte_raw_entries
 
 

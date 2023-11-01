@@ -35,9 +35,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  airbyte_contentful:
-    # Applies to all files under models/example/
-    +materialized: table
-    +enabled: true
-    +post-hook:
-      - "GRANT ALL ON {{ this }} TO GROUP analytics"
+  airbyte:
+    airbyte_contentful:
+      # Applies to all files under models/example/
+      +materialized: table
+      +enabled: true
+      +post-hook:
+        - "GRANT ALL ON {{ this }} TO GROUP analytics"

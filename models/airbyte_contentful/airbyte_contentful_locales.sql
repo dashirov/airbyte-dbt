@@ -21,6 +21,6 @@ SELECT
        (_airbyte_raw_locales._airbyte_data->>'default')::boolean as "default",
        (_airbyte_raw_locales._airbyte_data->>'fallbackCode')::varchar(12) as fallback_code
 {% endif %}
-    from _airbyte_raw_{{ this }}
+    from _airbyte_raw_locales
 
 

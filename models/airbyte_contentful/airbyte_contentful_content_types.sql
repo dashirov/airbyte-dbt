@@ -30,6 +30,6 @@ SELECT
         _airbyte_raw_content_types._airbyte_data->'fields' as fields
 
 {% endif %}
-    from _airbyte_raw_{{ this }}
+    from _airbyte_raw_content_types
 
 

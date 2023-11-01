@@ -17,6 +17,6 @@ SELECT
        (_airbyte_raw_spaces._airbyte_data->>'name')::varchar(50) as name,
        _airbyte_raw_spaces._airbyte_data->'locales' as locales
 {% endif %}
-    from _airbyte_raw_{{this}}
+    from _airbyte_raw_spaces
 
 
