@@ -1,0 +1,56 @@
+version: 2
+
+models:
+    - name: airbyte_contentful_assets
+      description: "contentful assets"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: airbyte_contentful_content_types
+      description: "contentful content types"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: airbyte_contentful_entries
+      description: "contentful entries"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: airbyte_contentful_locales
+      description: "contentful locales"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: airbyte_contentful_spaces
+      description: "contentful spaces"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: airbyte_contentful_tags
+      description: "contentful tags"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
