@@ -37,6 +37,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   airbyte:
     airbyte_contentful:
+      +database: airbyte
+      +schema:   contentful_delivery
       # Applies to all files under models/example/
       +materialized: table
       +enabled: true
