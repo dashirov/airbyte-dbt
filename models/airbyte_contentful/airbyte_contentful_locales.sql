@@ -1,12 +1,6 @@
 {{ config(
     alias='locales',
     schema='contentful',
-    materialized='table',
-    pre_hook=[
-    ],
-    post_hook=[
-              "GRANT ALL ON {{ this }} TO GROUP analytics"
-    ],
     dist='id',
     sort='code'
 ) }}
