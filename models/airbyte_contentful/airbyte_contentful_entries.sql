@@ -13,7 +13,7 @@ SELECT
        (_airbyte_data."sys"."createdAt")::timestamp as created_at,
        (_airbyte_data."sys"."updatedAt")::timestamp as updated_at,
        (_airbyte_data."sys"."contentType"."sys"."id")::varchar(150) as content_type,
-       (_airbyte_data."sys"."environment"."sys"."id")::varchar(6) as environemnt_id,
+       (_airbyte_data."sys"."environment"."sys"."id")::varchar(6) as environment_id,
        _airbyte_data."fields" as fields,
        _airbyte_data."metadata" as metadata
 {% elif target.type == 'postgres' %}
@@ -24,7 +24,7 @@ SELECT
        (_airbyte_data->'sys'->>'createdAt')::timestamp as created_at,
        (_airbyte_data->'sys'->>'updatedAt')::timestamp as updated_at,
        (_airbyte_data->'sys'->'contentType'->'sys'->>'id')::varchar(150) as content_type,
-       (_airbyte_data->'sys'->'environment'->'sys'->>'id')::varchar(6) as environemnt_id,
+       (_airbyte_data->'sys'->'environment'->'sys'->>'id')::varchar(6) as environment_id,
        _airbyte_data->'fields' as fields,
        _airbyte_data->'metadata' as metadata
 {% endif %}
