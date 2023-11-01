@@ -9,7 +9,7 @@ sources:
           This data source is provided by Airbyte custom connector for Contentful Delivery API (Published Content)
           The connector is expected to be scheduled, and to pull updates from the Contentful Delivery API multiple
           times a day in an incremental fashion
-    database: airflow
+    database: airbyte
     schema:   contentful_delivery
     tables:
       - name: tags
