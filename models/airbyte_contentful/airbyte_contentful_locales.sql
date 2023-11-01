@@ -1,6 +1,5 @@
 {{ config(
     alias='locales',
-    schema='contentful',
     dist='id',
     sort='code'
 ) }}

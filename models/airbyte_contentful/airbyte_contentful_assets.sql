@@ -1,6 +1,5 @@
 {{ config(
     alias='assets',
-    schema='contentful',
     dist='id',
     sort='created_at'
 ) }}

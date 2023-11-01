@@ -1,6 +1,5 @@
 {{ config(
     alias='spaces',
-    schema='contentful',
     dist='id',
     sort='name'
 ) }}

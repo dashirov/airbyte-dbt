@@ -1,6 +1,5 @@
 {{ config(
     alias='tags',
-    schema='contentful',
     dist='id',
     sort='created_at'
 ) }}
