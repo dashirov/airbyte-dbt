@@ -1,6 +1,7 @@
 {{ config(
     alias='spaces',
     schema='contentful',
+    materialized='table',
     pre_hook=[
     ],
     post_hook=[

@@ -1,6 +1,7 @@
 {{ config(
     alias='assets',
     schema='contentful',
+    materialized='table',
     pre_hook=[
     ],
     post_hook=[

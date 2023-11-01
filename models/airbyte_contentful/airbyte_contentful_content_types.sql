@@ -1,6 +1,7 @@
 {{ config(
     alias='content_types',
     schema='contentful',
+    materialized='table',
     pre_hook=[
     ],
     post_hook=[

@@ -1,6 +1,7 @@
 {{ config(
     alias='tags',
     schema='contentful',
+    materialized='table',
     pre_hook=[
     ],
     post_hook=[
