@@ -37,9 +37,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   airbyte:
     airbyte_contentful:
+      # Applies to all files under models/airbyte_contentful/
       +database: airbyte
       +schema:   contentful_delivery
-      # Applies to all files under models/example/
       +materialized: table
       +enabled: true
       +post-hook:
@@ -48,3 +48,7 @@ on-run-end:
  - '{% for schema in schemas %}grant usage on schema {{ schema }} to group analytics;{% endfor %}'
  - '{% for schema in schemas %}grant select on all tables in schema {{ schema }} to group analytics;{% endfor %}'
  - '{% for schema in schemas %}alter default privileges in schema {{ schema }} grant select on tables to group analytics{% endfor %}'
+quoting:
+  database: true
+  schema: true
+  identifier: true
