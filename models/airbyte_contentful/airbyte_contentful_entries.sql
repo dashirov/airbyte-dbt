@@ -2,8 +2,6 @@
     alias='entries',
     schema='contentful',
     pre_hook=[
-              "SET json_serialization_enable TO true;" ,
-              "SET json_serialization_parse_nested_strings TO true;"
     ],
     post_hook=[
               "GRANT ALL ON {{ this }} TO GROUP analytics"
