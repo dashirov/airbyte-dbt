@@ -9,6 +9,7 @@ SELECT
 {% if target.type == 'redshift' %}
     -- Redshift-specific SQL query
        (_airbyte_data."sys"."id")::varchar(500) as id,
+       (_airbyte_data."name")::varchar(500) as name,
        (_airbyte_data."sys"."createdAt")::timestamp as created_at,
        (_airbyte_data."sys"."updatedAt")::timestamp as updated_at,
        (_airbyte_data."sys"."version")::int8 as version,
@@ -18,6 +19,7 @@ SELECT
 {% elif target.type == 'postgres' %}
     -- PostgreSQL-specific SQL query
        (_airbyte_data->'sys'->>'id')::varchar(500) as id,
+       (_airbyte_data->>'name')::varchar(500) as name,
        (_airbyte_data->'sys'->>'createdAt')::timestamp as created_at,
        (_airbyte_data->'sys'->>'updatedAt')::timestamp as updated_at,
        (_airbyte_data->'sys'->>'version')::int8 as version,
