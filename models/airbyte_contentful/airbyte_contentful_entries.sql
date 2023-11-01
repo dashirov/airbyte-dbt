@@ -28,6 +28,6 @@ SELECT
        _airbyte_data->'fields' as fields,
        _airbyte_data->'metadata' as metadata
 {% endif %}
-    from {{ source('contentful_raw','entries') }}
+    from {{ source('contentful_raw','entries') }} as entries
 
 

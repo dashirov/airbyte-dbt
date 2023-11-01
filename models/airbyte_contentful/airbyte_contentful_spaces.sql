@@ -16,6 +16,6 @@ SELECT
        (_airbyte_data->>'name')::varchar(50) as name,
        _airbyte_data->'locales' as locales
 {% endif %}
-    from {{ source('contentful_raw','spaces') }}
+    from {{ source('contentful_raw','spaces') }} as spaces
 
 

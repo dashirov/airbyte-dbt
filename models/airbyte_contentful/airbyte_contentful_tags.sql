@@ -26,6 +26,6 @@ SELECT
        (_airbyte_data->'sys'->'updatedBy'->'sys'->>'id')::varchar(25) as updated_by,
        (_airbyte_data->'sys'->>'visibility')::varchar(10) as visibility
 {% endif %}
-    from {{ source('contentful_raw','tags') }}
+    from {{ source('contentful_raw','tags') }} as tags
 
 

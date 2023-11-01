@@ -29,6 +29,6 @@ SELECT
         _airbyte_data->'fields' as fields
 
 {% endif %}
-    from {{ source('contentful_raw','content_types') }}
+    from {{ source('contentful_raw','content_types') }} as content_types
 
 

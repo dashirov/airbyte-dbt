@@ -20,6 +20,6 @@ SELECT
        (_airbyte_data->>'default')::boolean as "default",
        (_airbyte_data->>'fallbackCode')::varchar(12) as fallback_code
 {% endif %}
-    from{{ source('contentful_raw','locales') }}
+    from{{ source('contentful_raw','locales') }} as locales
 
 
