@@ -43,7 +43,7 @@ models:
       +materialized: table
       +enabled: true
       +post-hook:
-        - 'GRANT ALL ON {{ this }} TO GROUP analytics'
+        - 'grant select on {{ this }} to group analytics'
 on-run-end:
  - '{% for schema in schemas %}grant usage on schema {{ schema }} to group analytics;{% endfor %}'
  - '{% for schema in schemas %}grant select on all tables in schema {{ schema }} to group analytics;{% endfor %}'
