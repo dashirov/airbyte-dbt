@@ -1,6 +1,11 @@
+{% set source_environment = var('source_environment') %}
+{% set target_schema = var('target_schema') %}
+
+
 {{ config(
     alias='spaces',
     dist='id',
+    schema=target_schema,
     sort='name'
 ) }}
 
@@ -16,6 +21,6 @@ SELECT
        (_airbyte_data->>'name')::varchar(50) as name,
        _airbyte_data->'locales' as locales
 {% endif %}
-    from {{ source('contentful_raw','spaces') }} as spaces
+    from {{ source(source_environment,'spaces') }} as spaces
 
 

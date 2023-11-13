@@ -1,5 +1,9 @@
+{% set source_environment = var('source_environment') %}
+{% set target_schema = var('target_schema') %}
+
 {{ config(
     alias='content_types',
+    schema=target_schema,
     dist='id',
     sort='created_at'
 ) }}
@@ -29,6 +33,6 @@ SELECT
         _airbyte_data->'fields' as fields
 
 {% endif %}
-    from {{ source('contentful_raw','content_types') }} as content_types
+    from {{ source(source_environment,'content_types') }} as content_types
 
 

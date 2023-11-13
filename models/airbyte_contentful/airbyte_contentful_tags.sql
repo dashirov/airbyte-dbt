@@ -1,5 +1,10 @@
+{% set source_environment = var('source_environment') %}
+{% set target_schema = var('target_schema') %}
+
+
 {{ config(
     alias='tags',
+    schema=target_schema,
     dist='id',
     sort='created_at'
 ) }}
@@ -26,6 +31,6 @@ SELECT
        (_airbyte_data->'sys'->'updatedBy'->'sys'->>'id')::varchar(25) as updated_by,
        (_airbyte_data->'sys'->>'visibility')::varchar(10) as visibility
 {% endif %}
-    from {{ source('contentful_raw','tags') }} as tags
+    from {{ source(source_environment,'tags') }} as tags
 
 

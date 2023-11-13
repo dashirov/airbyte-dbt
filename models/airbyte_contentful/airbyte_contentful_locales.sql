@@ -1,6 +1,11 @@
+{% set source_environment = var('source_environment') %}
+{% set target_schema = var('target_schema') %}
+
+
 {{ config(
     alias='locales',
     dist='id',
+    schema=target_schema,
     sort='code'
 ) }}
 
@@ -20,6 +25,6 @@ SELECT
        (_airbyte_data->>'default')::boolean as "default",
        (_airbyte_data->>'fallbackCode')::varchar(12) as fallback_code
 {% endif %}
-    from{{ source('contentful_raw','locales') }} as locales
+    from{{ source(source_environment,'locales') }} as locales
 
 

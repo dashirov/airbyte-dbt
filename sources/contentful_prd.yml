@@ -1,0 +1,51 @@
+---
+version: 2
+sources:
+  - name: contentful_raw
+    loader: Airbyte contentful API data connector
+    meta:
+      contains_pii: false
+      owner: "@David.Ashirov"
+    description: >
+          This data source is provided by Airbyte custom connector for Contentful Delivery API (Published Content)
+          The connector is expected to be scheduled, and to pull updates from the Contentful Delivery API multiple
+          times a day in an incremental fashion
+    database: airbyte
+    schema:   contentful_delivery
+    tables:
+      - name: tags
+        identifier: _airbyte_raw_tags
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+      - name: spaces
+        identifier: _airbyte_raw_spaces
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+      - name: locales
+        identifier: _airbyte_raw_locales
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+      - name: content_types
+        identifier: _airbyte_raw_content_types
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+      - name: assets
+        identifier: _airbyte_raw_assets
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+      - name: entries
+        identifier: _airbyte_raw_entries
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
