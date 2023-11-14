@@ -1,7 +1,7 @@
 ---
 version: 2
 sources:
-  - name: contentful_raw
+  - name: contentful_prd
     loader: Airbyte contentful API data connector
     meta:
       contains_pii: false
