@@ -11,7 +11,7 @@
 SELECT
 {% if target.type == 'redshift' %}
     -- Redshift-specific SQL query
-       (_airbyte_data."sys"."id")::varchar(25) as id,
+       (_airbyte_data."sys"."id")::varchar(36) as id,
        (_airbyte_data."sys"."locale")::varchar(12) as locale,
        (_airbyte_data."sys"."revision")::int8 as revision,
        (_airbyte_data."sys"."createdAt")::timestamp as created_at,

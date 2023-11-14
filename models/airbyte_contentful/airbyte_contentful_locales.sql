@@ -12,7 +12,7 @@
 SELECT
 {% if target.type == 'redshift' %}
     -- Redshift-specific SQL query
-       (_airbyte_data."sys"."id")::varchar(25) as id,
+       (_airbyte_data."sys"."id")::varchar(36) as id,
        (_airbyte_data."code")::varchar(12) as code,
        (_airbyte_data."name")::varchar(25) as name,
        (_airbyte_data."default")::boolean as "default",
