@@ -1,0 +1,27 @@
+---
+version: 2
+sources:
+  - name: megaphone
+    loader: Megaphone Metrics (S3 Export Service, Production) → Redshift
+    meta:
+      contains_pii: false
+      owner: "@David.Ashirov"
+    description: >
+          This data source is provided by Megaphone Export Service that drops gzip jsonl files onto a shared S3 bucket
+          The connector is expected to be scheduled, and to pull updates from the s3 bucket multiple
+          times a day in an incremental fashion - loading new files only
+    database: airbyte
+    schema:   megaphone
+    tables:
+      - name: metrics
+        identifier: _airbyte_raw_metrics
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+      - name: impressions
+        identifier: _airbyte_raw_impressions
+        loaded_at_field: _airbyte_emitted_at
+        freshness:     # make this a little more strict
+          warn_after:  { count: 12, period: hour }
+          error_after: { count: 24, period: hour }

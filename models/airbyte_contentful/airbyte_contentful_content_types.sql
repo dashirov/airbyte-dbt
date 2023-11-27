@@ -1,5 +1,5 @@
-{% set source_environment = var('source_environment') %}
-{% set target_schema = var('target_schema') %}
+{% set source_environment = var('source_environment','contentful_dev') %}
+{% set target_schema = var('target_schema','contentful_delivery_dev') %}
 
 {{ config(
     alias='content_types',
