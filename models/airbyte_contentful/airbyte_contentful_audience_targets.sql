@@ -30,5 +30,5 @@ SELECT
      (targets.fields->>'operator')::varchar(20)    AS "operator",
      (targets.fields->>'fieldValue')::varchar(50)  AS field_value
 {% endif %}
-FROM {{ ref('airbyte_contentful_assets') }} targets
+FROM {{ ref('airbyte_contentful_entries') }} targets
 WHERE content_type = 'audienceTarget'
