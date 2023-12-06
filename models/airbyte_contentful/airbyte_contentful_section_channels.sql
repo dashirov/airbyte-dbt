@@ -19,7 +19,7 @@ SELECT
        ("fields"->>'title')::varchar(150) as channel_title
 {% endif %}
 from
-     {{ ref('entries') }} as channels
+     {{ ref('airbyte_contentful_entries') }} as channels
 where
     content_type = 'sectionChannel'
 
