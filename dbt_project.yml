@@ -36,6 +36,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   airbyte:
+    airbyte_poll_feedback_results:
+      +database: airbyte
+      +schema: poll_feedback_results
+      +materialized: table
+      +enabled: true
+      +post-hook:
+        - 'grant select on {{ this }} to group analytics'
     airbyte_contentful:
       # Applies to all files under models/airbyte_contentful/
       +database: airbyte
