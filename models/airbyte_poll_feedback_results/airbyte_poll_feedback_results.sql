@@ -1,9 +1,11 @@
 {{ config(
+    materialize='table',
     alias='poll_feedback_results',
     schema='poll_feedback_results',
     dist='feedback_id',
     sort='responded_at'
 ) }}
+
 select _airbyte_data."feedback_id"::varchar(36)    as feedback_id,
        _airbyte_data."path"::varchar(254)          as path,
        _airbyte_data."amplitude_id"::varchar(254)  as amplitude_id,
